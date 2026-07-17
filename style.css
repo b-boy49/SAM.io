@@ -37,76 +37,6 @@ a {
   text-decoration: none;
 }
 
-/* ---------- Navbar ---------- */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: linear-gradient(to bottom, rgba(10, 8, 6, 0.85), rgba(10, 8, 6, 0));
-  padding: 1.5rem 3rem;
-}
-
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2.5rem;
-}
-
-.nav-link {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  color: var(--text-cream);
-  position: relative;
-  padding-bottom: 0.4rem;
-  transition: color 0.25s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--red);
-}
-
-.nav-link.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 60%;
-  height: 2px;
-  background: var(--red);
-}
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 32px;
-  height: 32px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  display: block;
-  height: 2px;
-  background: var(--gold);
-  border-radius: 2px;
-}
-
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
@@ -146,7 +76,7 @@ a {
   gap: 2rem;
   max-width: 1500px;
   margin: 0 auto;
-  padding: 8.5rem 4% 3.5rem;
+  padding: 4rem 4% 3.5rem;
 }
 
 .hero-logo {
@@ -214,7 +144,7 @@ a {
 
 .social-btn {
   display: inline-block;
-  width: 190px;
+  width: clamp(220px, 18vw, 280px);
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.25s ease, filter 0.25s ease;
@@ -228,28 +158,6 @@ a {
 .social-btn:hover {
   transform: translateY(-4px);
   filter: brightness(1.15);
-}
-
-/* ---------- Scroll indicator ---------- */
-.scroll-indicator {
-  position: absolute;
-  left: 4%;
-  bottom: 1.4rem;
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--gold-bright);
-  animation: floatDown 2.2s ease-in-out infinite;
-}
-
-@keyframes floatDown {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(8px); opacity: 1; }
 }
 
 /* ---------- About ---------- */
@@ -300,31 +208,6 @@ a {
   transform: rotate(20deg);
 }
 
-/* ---------- Gallery / Contact placeholders ---------- */
-.gallery,
-.contact {
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-  border-top: 1px solid rgba(212, 175, 55, 0.15);
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  letter-spacing: 0.15em;
-  color: var(--gold-bright);
-  margin-bottom: 1rem;
-}
-
-.section-placeholder {
-  color: rgba(242, 233, 216, 0.6);
-}
-
 /* ---------- Footer ---------- */
 .site-footer {
   text-align: center;
@@ -336,36 +219,6 @@ a {
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
-  .navbar {
-    padding: 1.2rem 1.5rem;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    flex-direction: column;
-    background: rgba(10, 8, 6, 0.96);
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-  }
-
-  .nav-links.open {
-    max-height: 300px;
-  }
-
-  .nav-links li {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-  }
-
   .hero {
     min-height: auto;
   }
@@ -401,8 +254,8 @@ a {
     justify-content: center;
   }
 
-  .scroll-indicator {
-    display: none;
+  .social-btn {
+    width: min(78vw, 280px);
   }
 
   .about-card {
